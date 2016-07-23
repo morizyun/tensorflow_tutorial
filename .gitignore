@@ -175,3 +175,8 @@ fabric.properties
 .gitignore
 .idea/
 MNIST_data/
+data/*
+data-*
+*.gz
+*.local
+checkpoint
