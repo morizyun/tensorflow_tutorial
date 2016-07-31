@@ -6,7 +6,7 @@ x_data = np.random.rand(100).astype(np.float32)
 y_data = x_data * 0.1 + 0.3
 
 # Try to find values for W and b that compute y_data = W * x_data + b
-# (We know that W should be 0.1 and b 0.3, but Tensorflow will
+# (We know that W should be 0.1 and b 0.3, but TensorFlow will
 # figure that out for us.)
 W = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
 b = tf.Variable(tf.zeros([1]))
@@ -30,4 +30,15 @@ for step in range(201):
     if step % 20 == 0:
         print(step, sess.run(W), sess.run(b))
 
-        # Learns best fit is W: [0.1], b: [0.3]
+# Output:
+# 0 [-0.32730174] [ 0.84889215]
+# 20 [-0.05384782] [ 0.39161918]
+# 40 [ 0.05748582] [ 0.32531798]
+# 60 [ 0.08825166] [ 0.30699638]
+# 80 [ 0.09675346] [ 0.30193338]
+# 100 [ 0.09910288] [ 0.30053428]
+# 120 [ 0.09975208] [ 0.30014765]
+# 140 [ 0.09993149] [ 0.30004081]
+# 160 [ 0.09998105] [ 0.30001131]
+# 180 [ 0.09999476] [ 0.30000314]
+# 200 [ 0.09999856] [ 0.30000088]
